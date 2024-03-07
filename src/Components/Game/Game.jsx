@@ -3,7 +3,9 @@ import Energy from './Energy/Energy';
 import style from './Game.module.css';
 import Health from './Health/Health';
 import Money from './Money/Money';
-import Pause from './icons/pause.png';
+import Pause from '../Button/Pause/Pause';
+import Footer from './Footer/Footer';
+
 const Game = ({ pauseClick }) => {
   return (
     <div className={style.game}>
@@ -13,15 +15,13 @@ const Game = ({ pauseClick }) => {
           <Energy value={70} max={100} />
         </div>
         <Money value={0} />
-        <img
-          onClick={pauseClick}
-          className={style.img}
-          src={Pause}
-          alt='pause'
-        />
+        <Pause pauseClick={pauseClick} />
       </header>
 
       <main className={style.main}></main>
+      <footer className={style.footer}>
+        <Footer />
+      </footer>
     </div>
   );
 };

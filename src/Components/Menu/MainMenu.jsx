@@ -1,19 +1,26 @@
-import React from 'react';
 import style from './MainMenu.module.css';
+import Button from '../Button/Button';
 
-const MainMenu = ({ onButtonClick }) => {
+const MainMenu = ({ onButtonClick, showContinueButton }) => {
+  const handleContinueClick = () => {
+    onButtonClick();
+  };
+
   return (
     <div className={style.menu}>
       <div className={style.button}>
-        <button className={style.btn} onClick={onButtonClick}>
-          New Game
-        </button>
+        <Button onButtonClick={onButtonClick} name={'Новая игра'} />
+      </div>
+      {showContinueButton && (
+        <div className={style.button}>
+          <Button onButtonClick={handleContinueClick} name={'Продолжить'} />
+        </div>
+      )}
+      <div className={style.button}>
+        <Button name={'Настройки'} />
       </div>
       <div className={style.button}>
-        <button className={style.btn}>Settings</button>
-      </div>
-      <div className={style.button}>
-        <button className={style.btn}>Exit</button>
+        <Button name={'Выход'} />
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ export default function Energy({ value, max }) {
       <div
         style={{
           margin: 'auto 0',
-          border: '1px solid #333',
+          border: '1px solid black',
           width: '100px',
           borderRadius: '15px',
           height: '10px',

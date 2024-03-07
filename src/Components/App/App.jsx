@@ -5,10 +5,13 @@ import './App.css';
 
 const App = () => {
   const [showMainMenu, setShowMainMenu] = useState(true);
+  const [showContinueButton, setShowContinueButton] = useState(false);
 
   const handleButtonClick = () => {
     setShowMainMenu(false);
+    setShowContinueButton(true);
   };
+
   const handleReturnToMainMenu = () => {
     setShowMainMenu(true);
   };
@@ -16,7 +19,10 @@ const App = () => {
   return (
     <div className='app'>
       {showMainMenu ? (
-        <MainMenu onButtonClick={handleButtonClick} />
+        <MainMenu
+          onButtonClick={handleButtonClick}
+          showContinueButton={showContinueButton}
+        />
       ) : (
         <Game pauseClick={handleReturnToMainMenu} />
       )}

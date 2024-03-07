@@ -1,0 +1,10 @@
+.footer {
+  margin: auto 0;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.btn {
+  margin: auto 0;
+  padding: 0;
+}
