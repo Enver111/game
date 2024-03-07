@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
-import style from './Pause.module.css';
+import styles from './Pause.module.css';
 import Pause1 from '../img/pause1.png';
 import Pause2 from '../img/pause2.png';
 
-const Pause = ({ pauseClick }) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+interface PauseProps {
+  pauseClick: () => void;
+}
+
+const Pause: React.FC<PauseProps> = ({ pauseClick }) => {
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -25,17 +29,17 @@ const Pause = ({ pauseClick }) => {
 
   return (
     <div
-      className={style.btn}
+      className={styles.btn}
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
       {isClicked ? (
-        <img className={style.pause} src={Pause2} alt='Изображение 2' />
+        <img className={styles.pause} src={Pause2} alt='Изображение 2' />
       ) : isHovered ? (
-        <img className={style.pause} src={Pause2} alt='Изображение 2' />
+        <img className={styles.pause} src={Pause2} alt='Изображение 2' />
       ) : (
-        <img className={style.pause} src={Pause1} alt='Изображение 1' />
+        <img className={styles.pause} src={Pause1} alt='Изображение 1' />
       )}
     </div>
   );

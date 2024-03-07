@@ -1,7 +1,16 @@
+import React from 'react';
 import style from './MainMenu.module.css';
 import Button from '../Button/Button';
 
-const MainMenu = ({ onButtonClick, showContinueButton }) => {
+interface MainMenuProps {
+  onButtonClick: () => void;
+  showContinueButton: boolean;
+}
+
+const MainMenu: React.FC<MainMenuProps> = ({
+  onButtonClick,
+  showContinueButton,
+}) => {
   const handleContinueClick = () => {
     onButtonClick();
   };
@@ -17,10 +26,10 @@ const MainMenu = ({ onButtonClick, showContinueButton }) => {
         </div>
       )}
       <div className={style.button}>
-        <Button name={'Настройки'} />
+        <Button onButtonClick={() => {}} name={'Настройки'} />
       </div>
       <div className={style.button}>
-        <Button name={'Выход'} />
+        <Button onButtonClick={() => {}} name={'Выход'} />
       </div>
     </div>
   );

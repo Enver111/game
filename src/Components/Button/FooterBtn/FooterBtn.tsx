@@ -1,9 +1,15 @@
 import React, { useState } from 'react';
 import style from './FooterBtn.module.css';
 
-const FooterBtn = ({ image1, image2, image3 }) => {
-  const [isClicked, setIsClicked] = useState(false);
-  const [isHovered, setIsHovered] = useState(false);
+interface FooterBtnProps {
+  image1: string;
+  image2: string;
+  image3: string;
+}
+
+const FooterBtn: React.FC<FooterBtnProps> = ({ image1, image2, image3 }) => {
+  const [isClicked, setIsClicked] = useState<boolean>(false);
+  const [isHovered, setIsHovered] = useState<boolean>(false);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -31,7 +37,7 @@ const FooterBtn = ({ image1, image2, image3 }) => {
       {isClicked ? (
         <img className={style.footer} src={image2} alt='Изображение 2' />
       ) : isHovered ? (
-        <img className={style.footer} src={image3} alt='Изображение 2' />
+        <img className={style.footer} src={image3} alt='Изображение 3' />
       ) : (
         <img className={style.footer} src={image1} alt='Изображение 1' />
       )}

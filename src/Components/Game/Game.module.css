@@ -4,9 +4,7 @@
   width: 383px;
   justify-content: space-around;
   background: rgba(185, 156, 230, 0.228);
-  /*   background: rgba(white, 1); */
 }
-
 .wrap {
   margin: auto 0;
 }
@@ -22,7 +20,8 @@
 }
 .game {
   width: 383px;
-  background-image: url(../img/sky.png);
+  background-image: url(../img/settlement.jpg);
+  background-size: cover;
   height: 590px;
 }
 .footer {
