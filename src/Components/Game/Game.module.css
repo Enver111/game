@@ -4,13 +4,14 @@
   width: 383px;
   justify-content: space-around;
   background: rgba(185, 156, 230, 0.228);
+  position: relative;
 }
 .wrap {
   margin: auto 0;
 }
 .main {
+  position: absolute;
   width: 383px;
-  height: 75%;
 }
 .img {
   margin: auto 0;
@@ -25,8 +26,9 @@
   height: 590px;
 }
 .footer {
-  box-sizing: border-box;
-  height: 95px;
-  background: rgba(185, 156, 230, 0.228);
-  padding-top: 15px;
+  margin-top: 452px;
+  padding: 5px;
+  border: 5px solid rgba(0, 0, 0, 0.622);
+  border-radius: 10px 10px 0 0;
+  background: rgba(76, 67, 89, 0.228);
 }

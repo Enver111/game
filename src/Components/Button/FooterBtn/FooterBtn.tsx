@@ -5,9 +5,17 @@ interface FooterBtnProps {
   image1: string;
   image2: string;
   image3: string;
+  width: string;
+  onClick?: () => void;
 }
 
-const FooterBtn: React.FC<FooterBtnProps> = ({ image1, image2, image3 }) => {
+const FooterBtn: React.FC<FooterBtnProps> = ({
+  image1,
+  image2,
+  image3,
+  width,
+  onClick,
+}) => {
   const [isClicked, setIsClicked] = useState<boolean>(false);
   const [isHovered, setIsHovered] = useState<boolean>(false);
 
@@ -21,6 +29,9 @@ const FooterBtn: React.FC<FooterBtnProps> = ({ image1, image2, image3 }) => {
 
   const handleClick = () => {
     setIsClicked(true);
+    if (onClick) {
+      onClick();
+    }
 
     setTimeout(() => {
       setIsClicked(false);
@@ -35,11 +46,26 @@ const FooterBtn: React.FC<FooterBtnProps> = ({ image1, image2, image3 }) => {
       onMouseLeave={handleMouseLeave}
     >
       {isClicked ? (
-        <img className={style.footer} src={image2} alt='Изображение 2' />
+        <img
+          className={style.footer}
+          src={image2}
+          alt='Изображение 2'
+          style={{ width: `${width}`, height: `${width}` }}
+        />
       ) : isHovered ? (
-        <img className={style.footer} src={image3} alt='Изображение 3' />
+        <img
+          className={style.footer}
+          src={image3}
+          alt='Изображение 3'
+          style={{ width: `${width}`, height: `${width}` }}
+        />
       ) : (
-        <img className={style.footer} src={image1} alt='Изображение 1' />
+        <img
+          className={style.footer}
+          src={image1}
+          alt='Изображение 1'
+          style={{ width: `${width}`, height: `${width}` }}
+        />
       )}
     </div>
   );

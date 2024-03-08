@@ -3,9 +3,9 @@ import MainMenu from '../Menu/MainMenu';
 import Game from '../Game/Game';
 import './App.css';
 
-const App = () => {
-  const [showMainMenu, setShowMainMenu] = useState(true);
-  const [showContinueButton, setShowContinueButton] = useState(false);
+const App: React.FC = () => {
+  const [showMainMenu, setShowMainMenu] = useState<boolean>(true);
+  const [showContinueButton, setShowContinueButton] = useState<boolean>(false);
 
   const handleButtonClick = () => {
     setShowMainMenu(false);
